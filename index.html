@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - GN Divulgações</title>
+    <title>CV Paulo Henrique GN</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -13,86 +13,130 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background: #333;
-            color: #fff;
+            color: white;
             padding: 15px;
             text-align: center;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
+            margin: 20px 0;
         }
+
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 20px;
         }
+
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
         }
-        section {
+
+        nav ul li a:hover {
+            color: #d3d3d3;
+        }
+
+        .content {
+            display: none;
             padding: 20px;
+            background-color: white;
+            margin: 20px auto;
             max-width: 800px;
-            margin: auto;
-            background: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
         }
-        .projeto {
-            background: #eee;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
+
+        .active {
+            display: block;
         }
+
         footer {
             text-align: center;
             padding: 10px;
             background: #333;
-            color: #fff;
-            margin-top: 20px;
+            color: white;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>GN Divulgações</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+        <h1>CV Paulo Henrique GN</h1>
     </header>
 
-    <section id="sobre">
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('sobre')">Sobre Mim</a></li>
+            <li><a href="#" onclick="showContent('educacao')">Educação</a></li>
+            <li><a href="#" onclick="showContent('habilidades')">Habilidades</a></li>
+            <li><a href="#" onclick="showContent('projetos')">Projetos</a></li>
+            <li><a href="#" onclick="showContent('contato')">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div id="sobre" class="content">
         <h2>Sobre Mim</h2>
-        <p>Sou designer gráfico, especialista em marketing e social media, além de formado em Análise e Desenvolvimento de Sistemas. Como CEO da GN Divulgações, ajudo marcas a crescerem através de estratégias criativas e tecnologia.</p>
-    </section>
+        <p>Sou um profissional apaixonado por tecnologia e design. Com experiência em criação de soluções visuais e desenvolvimento de sistemas, busco sempre me atualizar para entregar os melhores resultados.</p>
+    </div>
 
-    <section id="projetos">
-        <h2>Meus Projetos</h2>
-        <div class="projeto">
-            <h3>Projeto 1</h3>
-            <p>Descrição breve do projeto. Tecnologias usadas: Photoshop, CorelDRAW.</p>
-        </div>
-        <div class="projeto">
-            <h3>Projeto 2</h3>
-            <p>Descrição breve do projeto. Tecnologias usadas: HTML, CSS, JavaScript.</p>
-        </div>
-    </section>
+    <div id="educacao" class="content">
+        <h2>Educação</h2>
+        <p>Graduado em Análise e Desenvolvimento de Sistemas, com cursos complementares em Design Gráfico e Marketing Digital. Apaixonado por aprender e aplicar novas tecnologias.</p>
+    </div>
 
-    <section id="contato">
+    <div id="habilidades" class="content">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Design Gráfico (CorelDRAW, Photoshop)</li>
+            <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
+            <li>Gestão de Redes Sociais e Marketing Digital</li>
+            <li>Suporte técnico e manutenção de sistemas</li>
+            <li>Proatividade e bom trabalho em equipe</li>
+        </ul>
+    </div>
+
+    <div id="projetos" class="content">
+        <h2>Projetos</h2>
+        <div>
+            <h3>Projeto 1: Desenvolvimento de Site</h3>
+            <p>Desenvolvimento de um site institucional para uma empresa de tecnologia, utilizando HTML, CSS, JavaScript e PHP.</p>
+        </div>
+        <div>
+            <h3>Projeto 2: Branding de Marca</h3>
+            <p>Criação de identidade visual completa para uma startup, incluindo logotipo, paleta de cores e materiais promocionais.</p>
+        </div>
+    </div>
+
+    <div id="contato" class="content">
         <h2>Contato</h2>
-        <p>📩 Email: seuemail@email.com</p>
-        <p>📱 WhatsApp: (00) 00000-0000</p>
-        <p>🔗 <a href="https://www.linkedin.com/in/seuperfil" target="_blank">LinkedIn</a></p>
-    </section>
+        <p>Email: paulo@example.com</p>
+        <p>Telefone: (11) 12345-6789</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/paulohgn" target="_blank">paulohgn</a></p>
+    </div>
 
     <footer>
-        <p>&copy; 2025 GN Divulgações. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Paulo Henrique GN. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
 </body>
 </html>
+
